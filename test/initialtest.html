@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>canvasinput - initial test</title>
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css">
+        <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=fontawesome">
+        <link rel="stylesheet" href="/css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
+        <script src="/js/canvasinput.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var input = new CanvasInput({
+                    canvas: document.getElementById('maincanvas'),
+                    onsubmit: function() { alert(this.value); }
+                });
+            });
+        </script>
+    </head>
+    <body style="background:#eee;">
+        <header>
+            <nav class="pure-menu pure-menu-open pure-menu-horizontal">
+                    <a href="#" class="pure-menu-heading">canvasinput</a>
+                        <ul>
+                            <li class="pure-menu-selected"><a href="#">Dashboard</a></li>
+                            <li class="pure-menu"><a href="#">Test1</a></li>
+                        </ul>
+            </nav>
+        </header>
+        <section class="dashboard">
+            <!-- our dashboard pieces will go here -->
+            <h2>canvasinput Initial Test</h2>
+            <canvas id="maincanvas" width="350" height="50"></canvas>
+        </section>
+        <footer>
+             <!-- copyright information can go here-->
+        </footer>
+    </body>
+</html>
