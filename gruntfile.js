@@ -1,5 +1,6 @@
 module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-typescript');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-qunit');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
@@ -26,12 +27,22 @@ module.exports = function (grunt) {
                 }
             }
         },
+        uglify: {
+            options: {
+                mangle: false
+            },
+            my_target: {
+                files: {
+                    'js/canvasinput.min.js': ['js/canvasinput.js']
+                }
+            }
+        },
         qunit: {
             all: ['test/**/*.html']
         },
         watch: {
             files: 'ts/**/*.ts',
-            tasks: ['typescript']
+            tasks: ['typescript','uglify']
         },
         open: {
             dev: {
