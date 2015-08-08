@@ -7,7 +7,8 @@
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css">
         <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=fontawesome">
         <link rel="stylesheet" href="/css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
-        <script src="/js/canvasinput.js" type="text/javascript" charset="utf-8"></script>
+        <link rel="stylesheet" href="../node_modules/qunitjs/qunit/qunit.css" media="screen"> 
+        <script src="../js/canvasinput.js" type="text/javascript" charset="utf-8"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 var input = new CanvasInput({
@@ -16,24 +17,14 @@
                 });
             });
         </script>
+        <script src="../node_modules/qunitjs/qunit/qunit.js"></script>
+        <script src="../node_modules/qunit-assert-canvas/qunit-assert-canvas.js"></script>
+        <script src="../test/initialtest.js"></script>
     </head>
     <body style="background:#eee;">
-        <header>
-            <nav class="pure-menu pure-menu-open pure-menu-horizontal">
-                    <a href="#" class="pure-menu-heading">canvasinput</a>
-                        <ul>
-                            <li class="pure-menu-selected"><a href="#">Dashboard</a></li>
-                            <li class="pure-menu"><a href="#">Test1</a></li>
-                        </ul>
-            </nav>
-        </header>
-        <section class="dashboard">
-            <!-- our dashboard pieces will go here -->
-            <h2>canvasinput Initial Test</h2>
-            <canvas id="maincanvas" width="350" height="50"></canvas>
-        </section>
-        <footer>
-             <!-- copyright information can go here-->
-        </footer>
+         <h2>canvasinput Initial Test</h2>
+         <canvas id="maincanvas" width="350" height="50"></canvas>
+         <div id="qunit"></div>
+         <div id="qunit-fixture"></div>
     </body>
 </html>

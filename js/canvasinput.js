@@ -1,30 +1,21 @@
-/*!
- *  Converted to Typescript and added support for both rendering 2d and webgl
- *  by: All original Licenses still apply
- *  work by Richard F. Ashwell III
- *
- *  Based on:
- *  CanvasInput v1.2.0
- *  http://goldfirestudios.com/blog/108/CanvasInput-HTML5-Canvas-Text-Input
- *
- *  (c) 2013-2015, James Simpson of GoldFire Studios
- *  goldfirestudios.com
- *
- *  MIT License
+/**
+ * @fileOverview canvasinput compiled from typescript
+ * @author {@link mailto:rashwell@gmail.com|Richard F. Ashwell III}
+ * @version 1.0.0
+ * @see The original inspiration for this project {@link http://goldfirestudios.com/blog/108/CanvasInput-HTML5-Canvas-Text-Input|CanvusInput HTML5 Canvas Text Input}
+ * @license MIT
+ * @example
+ * var input = new CanvasInput({
+ *      canvas: document.getElementById('canvasid'),
+ *      onsubmit: function() { alert(this.value); }
+ *      });
+ */
+/**
+ *  Class for the CanvasInput object
+ *  @class CanvasInput
  */
 var CanvasInput = (function () {
     function CanvasInput(options) {
-        // Load in property overrides
-        // This looked like a cool idea but I guess with Implicit Any
-        // Its a bad idea to do this loading them all explictly below
-        // which I guess is more typesafe anyway
-        // for (var prop in options) {
-        //    if (options.hasOwnProperty(prop)) {
-        //        if (this['_' + prop] !== undefined) {
-        //            this['_' + prop] = options[prop];
-        //        }
-        //    }
-        //}
         this._canvas = null;
         this._renderCanvas = null;
         this._shadowCanvas = null;
@@ -703,7 +694,16 @@ var CanvasInput = (function () {
         // Wrote these depending on ECMAScript 5 so tsc needs --target ES5
         // public get name():string { return this._name; }
         // public set name(value: string) { this._name = value; }
-        // Canvas get or set
+        /**
+         * Canvas getter.
+         * @method canvas
+         * @return Returns the current canvas that the CanvasInput object is rendering too.
+         */
+        /**
+         * Canvas setter.
+         * @method canvas
+         * @param canvas object
+         */
         get: function () { return this._canvas; },
         set: function (value) {
             if (typeof value !== undefined) {
@@ -947,9 +947,15 @@ var CanvasInput = (function () {
         enumerable: true,
         configurable: true
     });
-    // internal boxShadow setup parse only creating private setter no get/set for now
-    // mainly because the return on the set is required during constructor
-    // TODO: Potentially create seperate internal function for construction and standard get/set
+    /**
+     * Internal boxShadow setup parse only creating private setter no get/set for now
+     * mainly because the return on the set is required during constructor
+     * @method boxShadow
+     * @param {string} data
+     * @param {boolean} doReturn
+     * @inner
+     * @todo Potentially create seperate internal function for construction and standard get/set
+     */
     CanvasInput.prototype.boxShadow = function (data, doReturn) {
         if (typeof data !== 'undefined') {
             // parse box shadow

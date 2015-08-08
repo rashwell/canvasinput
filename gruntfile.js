@@ -5,6 +5,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-open');
+    grunt.loadNpmTasks('grunt-typedoc');
  
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -23,7 +24,8 @@ module.exports = function (grunt) {
                 options: {
                     module: 'commonjs',
                     target: 'es5',
-                    sourceMap: true
+                    sourceMap: true,
+                    declaration: true
                 }
             }
         },
@@ -37,12 +39,23 @@ module.exports = function (grunt) {
                 }
             }
         },
+        typedoc: {
+            build: {
+                options: {
+                    module: 'commonjs',
+                    out: './docs',
+                    name: 'canvasinput',
+                    target: 'es5'
+                },
+                src: ['./ts/**/*']
+            }
+        },
         qunit: {
             all: ['test/**/*.html']
         },
         watch: {
-            files: 'ts/**/*.ts',
-            tasks: ['typescript','uglify']
+            files: ['ts/**/*.ts','index.html','gruntfile.js'],
+            tasks: ['typescript','uglify','typedoc']
         },
         open: {
             dev: {

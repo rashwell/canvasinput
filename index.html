@@ -7,22 +7,58 @@
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css">
         <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=fontawesome">
         <link rel="stylesheet" href="/css/master.css" type="text/css" media="screen" title="no title" charset="utf-8">
-        <script src="/js/canvasinput.js" type="text/javascript" charset="utf-8"></script>
     </head>
     <body>
         <header>
             <nav class="pure-menu pure-menu-open pure-menu-horizontal">
                     <a href="#" class="pure-menu-heading">canvasinput</a>
                         <ul>
-                            <li class="pure-menu-selected"><a href="#">Dashboard</a></li>
+                            <li class="pure-menu-selected"><a href="#">Home</a></li>
+                            <li class="pure-menu"><a href="/docs/index.html">API Documentation</a></li>
                             <li class="pure-menu"><a href="/test/initialtest.html">Tests</a></li>
                         </ul>
             </nav>
         </header>
         <section class="dashboard">
-            <!-- our dashboard pieces will go here -->
-            <h2>canvasinput</h2>
-            <canvas id="maincanvas"></canvas>
+            <h1><a id="user-content-canvasinput" class="anchor" href="#canvasinput" aria-hidden="true"><span class="octicon octicon-link"></span></a>canvasinput</h1>
+
+            <p>Canvas Input for both WebGL and 2d contexts</p>
+
+            <h2><a id="user-content-description" class="anchor" href="#description" aria-hidden="true"><span class="octicon octicon-link"></span></a>Description</h2>
+
+            <p>Creates an Input control element for rendering in a graphics HTML5 Canvas context.</p>
+
+            <p>This was originally based, and for the moment forked from the exceptional work by James Simpson and GoldFire Studios, Inc.</p>
+
+            <p>The original project is here: <a href="https://github.com/goldfire/CanvasInput">https://github.com/goldfire/CanvasInput</a></p>
+
+            <p>I have a few major goals (below) that encouraged me to start this effort with typescript rather than javascript directly.  This will make it a little difficult to push back anything but minor fixes back to the original project however after I hit my 4th goal, I'll try and do a merge pull with the original project.</p>
+
+            <h2><a id="user-content-goals" class="anchor" href="#goals" aria-hidden="true"><span class="octicon octicon-link"></span></a>Goals</h2>
+
+            <ul class="task-list">
+                <li class="task-list-item"><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Gross conversion of the original project to typescript to add a little type safety</li>
+                <li class="task-list-item"><input class="task-list-item-checkbox" checked="checked" disabled="disabled" type="checkbox"> Add additonal tools and surrounding configs to make it easier to develop and test</li>
+                <li class="task-list-item"><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Add the webgl portions, not only canvas 2d but also canvas webgl to support (pixi, phaser.io, etc).</li>
+                <li class="task-list-item"><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Add some basic test setups</li>
+                <li class="task-list-item"><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Try a pull request from the original project diff'd with the output of the typescript compile to get the webgl feature pushed back to the original in case that project continues development</li>
+                <li class="task-list-item"><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Add a wrapper plugin in for Phaser.io and/or Pixi.js or other frameworks.</li>
+                <li class="task-list-item"><input class="task-list-item-checkbox" disabled="disabled" type="checkbox"> Misc improvements, like Shift Keyboard highlighting, as well as components for the later (Hard Parts)</li>
+            </ul>
+
+            <h2><a id="user-content-the-hard-parts" class="anchor" href="#the-hard-parts" aria-hidden="true"><span class="octicon octicon-link"></span></a>The Hard Parts</h2>
+
+            <p>James, made great progress through some of the tougher parts of this type of control but here are some hard parts to come</p>
+
+            <p>-[ ] Adding alternate non-DOM backend support.  This might make it possible for a control like this to be used with framerworks where DOM access isnt allowed. It's too convient and slick to use the DOM, but maybe and optional method could be added, or perhaps compileing from a different source, to keep the controls light, but with the same api and methods.</p>
+
+            <h2><a id="user-content-usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+            <h2><a id="user-content-development-tools" class="anchor" href="#development-tools" aria-hidden="true"><span class="octicon octicon-link"></span></a>Development Tools</h2>
+
+            <h2><a id="user-content-license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+            <p>Continuing with what James Simpson and GoldFire Studios, Inc intended with an MIT license.</p>
         </section>
         <footer>
              <!-- copyright information can go here-->
